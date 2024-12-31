@@ -1,6 +1,6 @@
 services:
   php-8-apache2-bookworm:
-    image: php-8-apache2-bookworm:v1.0
+    image: drvelasquezq/php-8-apache2-bookworm:v1.0
     container_name: contenedor-php-8-apache2-bookworm
     ports:
       - "8080:80"
