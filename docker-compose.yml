@@ -4,4 +4,3 @@ services:
     container_name: contenedor-php-8-apache2-bookworm
     ports:
       - "8080:80"
-      - "8081:443"
