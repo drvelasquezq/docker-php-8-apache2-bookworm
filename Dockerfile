@@ -28,6 +28,6 @@ WORKDIR /var/www
 COPY ./var/www/index.php /var/www/index.php
 COPY ./var/www/test.php /var/www/test.php
 
-COPY ./temp/script.sh /temp/script.sh
+COPY ./scripts/script.sh /scripts/script.sh
 
-CMD [ "/bin/sh", "/temp/script.sh" ]
+CMD [ "/bin/sh", "/scripts/script.sh" ]

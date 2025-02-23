@@ -3,44 +3,66 @@
 
 <a href="https://test.drvelasquezq.site/test.php" target="_blank">https://test.drvelasquezq.site/test.php</a>
 
+# Descripción:
+Este proyecto da los pasos para utilizar y crear imagen de docker que ejecuta una aplicación de PHP integrando Apache en Debian
+
+<ul>
+<li>Apache: 2.4.62</li>
+<li>PHP: 8.2.26</li>
+<li>Debian: Bookworm</li>
+</ul>
+
 # Docker hub:
 [https://hub.docker.com/r/drvelasquezq/php-8-apache2-bookworm](https://hub.docker.com/r/drvelasquezq/php-8-apache2-bookworm)
 
-## ejemplo para construir la imagen: 
+# Uso
+
 ```bash
-docker build --tag php-8-apache2-bookworm:v1.0 .
+# clonar proyecto
+git clone https://github.com/drvelasquezq/docker-php-8-apache2-bookworm.git
+# ingresar al proyecto
+cd docker-php-8-apache2-bookworm
+# crear contenedor
+docker compose up -d
 ```
 
-## ejemplo para crear contenedor que solo ejecute el script sh
+luego podrá ingresar a: http://localhost:8080
+
+### ejemplo para construir la imagen: 
 ```bash
-docker run --name contenedor-php-8-apache2-bookworm php-8-apache2-bookworm:v1.0
+docker build --progress=plain --tag drvelasquezq/php-8-apache2-bookworm:v1.0 .
 ```
 
-## ejemplo para crear contenedor con la imagen y ejecutarlo de manera interactiva:
+### ejemplo para crear contenedor que solo ejecute el script sh que ya está en la imagen
 ```bash
-docker run --tty --interactive -p 80:80 --name contenedor-php-8-apache2-bookworm php-8-apache2-bookworm:v1.0 bash
+docker run --name container-php-8-apache2-bookworm drvelasquezq/php-8-apache2-bookworm:v1.0
 ```
 
-## ejemplo para crear contenedor con la imagen y ejecutarlo en segundo plano
+### ejemplo para crear contenedor con la imagen y ejecutarlo de manera interactiva:
 ```bash
-docker run -d -p 80:80 --name contenedor-php-8-apache2-bookworm php-8-apache2-bookworm:v1.0
+docker run --tty --interactive -p 8080:80 --name container-php-8-apache2-bookworm drvelasquezq/php-8-apache2-bookworm:v1.0 bash
+```
+
+### ejemplo para crear contenedor con la imagen y ejecutarlo en segundo plano
+```bash
+docker run -d -p 80:80 --name container-php-8-apache2-bookworm drvelasquezq/php-8-apache2-bookworm:v1.0
 ```
 ```bash
 ## para luego ingresar al contenedor
-docker exec -ti contenedor-php-8-apache2-bookworm bash
+docker exec -ti container-php-8-apache2-bookworm bash
 ```
 
-## ejemplo para remover contenedor:
+### ejemplo para remover contenedor:
 ```bash
-docker rm -f contenedor-php-8-apache2-bookworm
+docker rm -f container-php-8-apache2-bookworm
 ```
 
-## ejemplo de copia de archivo:
+### ejemplo de copia de archivo:
 ```
-docker cp contenedor-php-8-apache2-bookworm:/etc/php/8.2/cli/php.ini ./etc/php/8.2/cli/
+docker cp container-php-8-apache2-bookworm:/etc/php/8.2/cli/php.ini ./etc/php/8.2/cli/
 ```
 
-## ejemplo para subir imagen a docker hub
+### ejemplo para subir imagen a docker hub
 ```bash
 docker tag php-8-apache2-bookworm:v1.0 drvelasquezq/php-8-apache2-bookworm:v1.0
 ```
