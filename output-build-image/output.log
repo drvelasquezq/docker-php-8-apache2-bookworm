@@ -1,0 +1,1003 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.59kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:bookworm
+#2 ...
+
+#3 [auth] composer/composer:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/composer/composer:2.8
+#5 DONE 0.8s
+
+#2 [internal] load metadata for docker.io/library/debian:bookworm
+#2 DONE 0.9s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 982B 0.0s done
+#7 DONE 0.0s
+
+#8 [stage-0  1/17] FROM docker.io/library/debian:bookworm@sha256:731dd1380d6a8d170a695dbeb17fe0eade0e1c29f654cf0a3a07f372191c3f4b
+#8 resolve docker.io/library/debian:bookworm@sha256:731dd1380d6a8d170a695dbeb17fe0eade0e1c29f654cf0a3a07f372191c3f4b 0.0s done
+#8 CACHED
+
+#9 FROM docker.io/composer/composer:2.8@sha256:ad437e1d32359d51abb5854ca9ab2024723975a4f14c104eaea801c2c9be9fe9
+#9 resolve docker.io/composer/composer:2.8@sha256:ad437e1d32359d51abb5854ca9ab2024723975a4f14c104eaea801c2c9be9fe9 0.1s done
+#9 CACHED
+
+#10 [stage-0  2/17] RUN apt-get update &&     apt-get clean
+#10 0.660 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#10 0.813 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#10 0.821 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#10 0.827 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8793 kB]
+#10 1.058 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#10 1.059 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [274 kB]
+#10 2.109 Fetched 9328 kB in 1s (6239 kB/s)
+#10 2.109 Reading package lists...
+#10 DONE 3.2s
+
+#11 [stage-0  3/17] RUN apt-get install -y apache2 &&     apt-get install -y lynx &&     apt-get clean
+#11 0.500 Reading package lists...
+#11 1.325 Building dependency tree...
+#11 1.588 Reading state information...
+#11 1.858 The following additional packages will be installed:
+#11 1.858   apache2-bin apache2-data apache2-utils ca-certificates krb5-locales libapr1
+#11 1.858   libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap libbrotli1 libcurl4
+#11 1.858   libexpat1 libgdbm-compat4 libgdbm6 libgpm2 libgssapi-krb5-2 libicu72
+#11 1.858   libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+#11 1.859   libldap-2.5-0 libldap-common liblua5.3-0 libncursesw6 libnghttp2-14
+#11 1.859   libperl5.36 libproc2-0 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+#11 1.859   libsasl2-modules-db libsqlite3-0 libssh2-1 libssl3 libxml2 media-types
+#11 1.860   netbase openssl perl perl-modules-5.36 procps psmisc publicsuffix ssl-cert
+#11 1.863 Suggested packages:
+#11 1.863   apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser
+#11 1.863   gdbm-l10n gpm krb5-doc krb5-user sensible-utils libsasl2-modules-gssapi-mit
+#11 1.863   | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+#11 1.863   libsasl2-modules-sql perl-doc libterm-readline-gnu-perl
+#11 1.863   | libterm-readline-perl-perl make libtap-harness-archive-perl
+#11 2.094 The following NEW packages will be installed:
+#11 2.094   apache2 apache2-bin apache2-data apache2-utils ca-certificates krb5-locales
+#11 2.094   libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap libbrotli1
+#11 2.094   libcurl4 libexpat1 libgdbm-compat4 libgdbm6 libgpm2 libgssapi-krb5-2
+#11 2.094   libicu72 libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+#11 2.095   libldap-2.5-0 libldap-common liblua5.3-0 libncursesw6 libnghttp2-14
+#11 2.095   libperl5.36 libproc2-0 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+#11 2.096   libsasl2-modules-db libsqlite3-0 libssh2-1 libssl3 libxml2 media-types
+#11 2.096   netbase openssl perl perl-modules-5.36 procps psmisc publicsuffix ssl-cert
+#11 2.130 0 upgraded, 48 newly installed, 0 to remove and 0 not upgraded.
+#11 2.130 Need to get 27.8 MB of archives.
+#11 2.130 After this operation, 117 MB of additional disk space will be used.
+#11 2.130 Get:1 http://deb.debian.org/debian bookworm/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u2 [2815 kB]
+#11 2.215 Get:2 http://deb.debian.org/debian bookworm/main amd64 libgdbm6 amd64 1.23-3 [72.2 kB]
+#11 2.216 Get:3 http://deb.debian.org/debian bookworm/main amd64 libgdbm-compat4 amd64 1.23-3 [48.2 kB]
+#11 2.217 Get:4 http://deb.debian.org/debian bookworm/main amd64 libperl5.36 amd64 5.36.0-7+deb12u2 [4207 kB]
+#11 2.324 Get:5 http://deb.debian.org/debian bookworm/main amd64 perl amd64 5.36.0-7+deb12u2 [239 kB]
+#11 2.334 Get:6 http://deb.debian.org/debian bookworm/main amd64 libapr1 amd64 1.7.2-3+deb12u1 [102 kB]
+#11 2.336 Get:7 http://deb.debian.org/debian bookworm/main amd64 libexpat1 amd64 2.5.0-1+deb12u1 [98.9 kB]
+#11 2.339 Get:8 http://deb.debian.org/debian bookworm-updates/main amd64 libssl3 amd64 3.0.17-1~deb12u2 [2027 kB]
+#11 2.376 Get:9 http://deb.debian.org/debian bookworm/main amd64 libaprutil1 amd64 1.6.3-1 [87.8 kB]
+#11 2.378 Get:10 http://deb.debian.org/debian bookworm/main amd64 libsqlite3-0 amd64 3.40.1-2+deb12u1 [839 kB]
+#11 2.398 Get:11 http://deb.debian.org/debian bookworm/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.3-1 [13.6 kB]
+#11 2.399 Get:12 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10 [20.3 kB]
+#11 2.399 Get:13 http://deb.debian.org/debian bookworm/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10 [59.7 kB]
+#11 2.402 Get:14 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+#11 2.406 Get:15 http://deb.debian.org/debian bookworm/main amd64 libaprutil1-ldap amd64 1.6.3-1 [11.8 kB]
+#11 2.406 Get:16 http://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b6 [275 kB]
+#11 2.414 Get:17 http://deb.debian.org/debian bookworm/main amd64 libkrb5support0 amd64 1.20.1-2+deb12u3 [32.8 kB]
+#11 2.415 Get:18 http://deb.debian.org/debian bookworm/main amd64 libk5crypto3 amd64 1.20.1-2+deb12u3 [78.9 kB]
+#11 2.416 Get:19 http://deb.debian.org/debian bookworm/main amd64 libkeyutils1 amd64 1.6.3-2 [8808 B]
+#11 2.418 Get:20 http://deb.debian.org/debian bookworm/main amd64 libkrb5-3 amd64 1.20.1-2+deb12u3 [332 kB]
+#11 2.424 Get:21 http://deb.debian.org/debian bookworm/main amd64 libgssapi-krb5-2 amd64 1.20.1-2+deb12u3 [135 kB]
+#11 2.427 Get:22 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u2 [73.0 kB]
+#11 2.429 Get:23 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+#11 2.432 Get:24 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+#11 2.433 Get:25 http://deb.debian.org/debian bookworm/main amd64 libssh2-1 amd64 1.10.0-3+b1 [179 kB]
+#11 2.437 Get:26 http://deb.debian.org/debian bookworm/main amd64 libcurl4 amd64 7.88.1-10+deb12u12 [391 kB]
+#11 2.445 Get:27 http://deb.debian.org/debian bookworm/main amd64 libjansson4 amd64 2.14-2 [40.8 kB]
+#11 2.445 Get:28 http://deb.debian.org/debian bookworm/main amd64 liblua5.3-0 amd64 5.3.6-2 [123 kB]
+#11 2.451 Get:29 http://deb.debian.org/debian-security bookworm-security/main amd64 libicu72 amd64 72.1-3+deb12u1 [9376 kB]
+#11 2.739 Get:30 http://deb.debian.org/debian-security bookworm-security/main amd64 libxml2 amd64 2.9.14+dfsg-1.3~deb12u2 [687 kB]
+#11 2.768 Get:31 http://deb.debian.org/debian bookworm/main amd64 apache2-bin amd64 2.4.62-1~deb12u2 [1386 kB]
+#11 2.797 Get:32 http://deb.debian.org/debian bookworm/main amd64 apache2-data all 2.4.62-1~deb12u2 [160 kB]
+#11 2.801 Get:33 http://deb.debian.org/debian bookworm/main amd64 apache2-utils amd64 2.4.62-1~deb12u2 [210 kB]
+#11 2.802 Get:34 http://deb.debian.org/debian bookworm/main amd64 media-types all 10.0.0 [26.1 kB]
+#11 2.804 Get:35 http://deb.debian.org/debian bookworm/main amd64 libncursesw6 amd64 6.4-4 [134 kB]
+#11 2.805 Get:36 http://deb.debian.org/debian bookworm/main amd64 libproc2-0 amd64 2:4.0.2-3 [62.8 kB]
+#11 2.807 Get:37 http://deb.debian.org/debian bookworm/main amd64 procps amd64 2:4.0.2-3 [709 kB]
+#11 2.818 Get:38 http://deb.debian.org/debian bookworm/main amd64 apache2 amd64 2.4.62-1~deb12u2 [223 kB]
+#11 2.822 Get:39 http://deb.debian.org/debian bookworm/main amd64 netbase all 6.4 [12.8 kB]
+#11 2.823 Get:40 http://deb.debian.org/debian bookworm-updates/main amd64 openssl amd64 3.0.17-1~deb12u2 [1430 kB]
+#11 2.858 Get:41 http://deb.debian.org/debian bookworm-updates/main amd64 ca-certificates all 20230311+deb12u1 [155 kB]
+#11 2.861 Get:42 http://deb.debian.org/debian bookworm/main amd64 krb5-locales all 1.20.1-2+deb12u3 [63.1 kB]
+#11 2.862 Get:43 http://deb.debian.org/debian bookworm/main amd64 libgpm2 amd64 1.20.7-10+b1 [14.2 kB]
+#11 2.863 Get:44 http://deb.debian.org/debian bookworm/main amd64 libldap-common all 2.5.13+dfsg-5 [29.3 kB]
+#11 2.864 Get:45 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules amd64 2.1.28+dfsg-10 [66.6 kB]
+#11 2.865 Get:46 http://deb.debian.org/debian bookworm/main amd64 psmisc amd64 23.6-1 [259 kB]
+#11 2.871 Get:47 http://deb.debian.org/debian bookworm/main amd64 publicsuffix all 20230209.2326-1 [126 kB]
+#11 2.874 Get:48 http://deb.debian.org/debian bookworm/main amd64 ssl-cert all 1.1.2 [21.1 kB]
+#11 3.193 debconf: delaying package configuration, since apt-utils is not installed
+#11 3.224 Fetched 27.8 MB in 1s (36.1 MB/s)
+#11 3.253 Selecting previously unselected package perl-modules-5.36.
+#11 3.253 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6089 files and directories currently installed.)
+#11 3.283 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u2_all.deb ...
+#11 3.289 Unpacking perl-modules-5.36 (5.36.0-7+deb12u2) ...
+#11 3.763 Selecting previously unselected package libgdbm6:amd64.
+#11 3.764 Preparing to unpack .../01-libgdbm6_1.23-3_amd64.deb ...
+#11 3.779 Unpacking libgdbm6:amd64 (1.23-3) ...
+#11 3.837 Selecting previously unselected package libgdbm-compat4:amd64.
+#11 3.838 Preparing to unpack .../02-libgdbm-compat4_1.23-3_amd64.deb ...
+#11 3.845 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#11 3.906 Selecting previously unselected package libperl5.36:amd64.
+#11 3.907 Preparing to unpack .../03-libperl5.36_5.36.0-7+deb12u2_amd64.deb ...
+#11 3.913 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u2) ...
+#11 4.479 Selecting previously unselected package perl.
+#11 4.481 Preparing to unpack .../04-perl_5.36.0-7+deb12u2_amd64.deb ...
+#11 4.493 Unpacking perl (5.36.0-7+deb12u2) ...
+#11 4.560 Selecting previously unselected package libapr1:amd64.
+#11 4.561 Preparing to unpack .../05-libapr1_1.7.2-3+deb12u1_amd64.deb ...
+#11 4.568 Unpacking libapr1:amd64 (1.7.2-3+deb12u1) ...
+#11 4.624 Selecting previously unselected package libexpat1:amd64.
+#11 4.626 Preparing to unpack .../06-libexpat1_2.5.0-1+deb12u1_amd64.deb ...
+#11 4.632 Unpacking libexpat1:amd64 (2.5.0-1+deb12u1) ...
+#11 4.694 Selecting previously unselected package libssl3:amd64.
+#11 4.695 Preparing to unpack .../07-libssl3_3.0.17-1~deb12u2_amd64.deb ...
+#11 4.702 Unpacking libssl3:amd64 (3.0.17-1~deb12u2) ...
+#11 4.892 Selecting previously unselected package libaprutil1:amd64.
+#11 4.893 Preparing to unpack .../08-libaprutil1_1.6.3-1_amd64.deb ...
+#11 4.896 Unpacking libaprutil1:amd64 (1.6.3-1) ...
+#11 4.930 Selecting previously unselected package libsqlite3-0:amd64.
+#11 4.931 Preparing to unpack .../09-libsqlite3-0_3.40.1-2+deb12u1_amd64.deb ...
+#11 4.934 Unpacking libsqlite3-0:amd64 (3.40.1-2+deb12u1) ...
+#11 5.000 Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+#11 5.001 Preparing to unpack .../10-libaprutil1-dbd-sqlite3_1.6.3-1_amd64.deb ...
+#11 5.004 Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.3-1) ...
+#11 5.036 Selecting previously unselected package libsasl2-modules-db:amd64.
+#11 5.037 Preparing to unpack .../11-libsasl2-modules-db_2.1.28+dfsg-10_amd64.deb ...
+#11 5.042 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#11 5.078 Selecting previously unselected package libsasl2-2:amd64.
+#11 5.080 Preparing to unpack .../12-libsasl2-2_2.1.28+dfsg-10_amd64.deb ...
+#11 5.084 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#11 5.126 Selecting previously unselected package libldap-2.5-0:amd64.
+#11 5.127 Preparing to unpack .../13-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+#11 5.133 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#11 5.183 Selecting previously unselected package libaprutil1-ldap:amd64.
+#11 5.184 Preparing to unpack .../14-libaprutil1-ldap_1.6.3-1_amd64.deb ...
+#11 5.189 Unpacking libaprutil1-ldap:amd64 (1.6.3-1) ...
+#11 5.224 Selecting previously unselected package libbrotli1:amd64.
+#11 5.225 Preparing to unpack .../15-libbrotli1_1.0.9-2+b6_amd64.deb ...
+#11 5.230 Unpacking libbrotli1:amd64 (1.0.9-2+b6) ...
+#11 5.285 Selecting previously unselected package libkrb5support0:amd64.
+#11 5.286 Preparing to unpack .../16-libkrb5support0_1.20.1-2+deb12u3_amd64.deb ...
+#11 5.290 Unpacking libkrb5support0:amd64 (1.20.1-2+deb12u3) ...
+#11 5.325 Selecting previously unselected package libk5crypto3:amd64.
+#11 5.327 Preparing to unpack .../17-libk5crypto3_1.20.1-2+deb12u3_amd64.deb ...
+#11 5.331 Unpacking libk5crypto3:amd64 (1.20.1-2+deb12u3) ...
+#11 5.368 Selecting previously unselected package libkeyutils1:amd64.
+#11 5.369 Preparing to unpack .../18-libkeyutils1_1.6.3-2_amd64.deb ...
+#11 5.374 Unpacking libkeyutils1:amd64 (1.6.3-2) ...
+#11 5.412 Selecting previously unselected package libkrb5-3:amd64.
+#11 5.413 Preparing to unpack .../19-libkrb5-3_1.20.1-2+deb12u3_amd64.deb ...
+#11 5.418 Unpacking libkrb5-3:amd64 (1.20.1-2+deb12u3) ...
+#11 5.473 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#11 5.474 Preparing to unpack .../20-libgssapi-krb5-2_1.20.1-2+deb12u3_amd64.deb ...
+#11 5.478 Unpacking libgssapi-krb5-2:amd64 (1.20.1-2+deb12u3) ...
+#11 5.513 Selecting previously unselected package libnghttp2-14:amd64.
+#11 5.514 Preparing to unpack .../21-libnghttp2-14_1.52.0-1+deb12u2_amd64.deb ...
+#11 5.517 Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u2) ...
+#11 5.550 Selecting previously unselected package libpsl5:amd64.
+#11 5.551 Preparing to unpack .../22-libpsl5_0.21.2-1_amd64.deb ...
+#11 5.554 Unpacking libpsl5:amd64 (0.21.2-1) ...
+#11 5.588 Selecting previously unselected package librtmp1:amd64.
+#11 5.589 Preparing to unpack .../23-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+#11 5.592 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#11 5.627 Selecting previously unselected package libssh2-1:amd64.
+#11 5.628 Preparing to unpack .../24-libssh2-1_1.10.0-3+b1_amd64.deb ...
+#11 5.632 Unpacking libssh2-1:amd64 (1.10.0-3+b1) ...
+#11 5.672 Selecting previously unselected package libcurl4:amd64.
+#11 5.673 Preparing to unpack .../25-libcurl4_7.88.1-10+deb12u12_amd64.deb ...
+#11 5.676 Unpacking libcurl4:amd64 (7.88.1-10+deb12u12) ...
+#11 5.731 Selecting previously unselected package libjansson4:amd64.
+#11 5.732 Preparing to unpack .../26-libjansson4_2.14-2_amd64.deb ...
+#11 5.737 Unpacking libjansson4:amd64 (2.14-2) ...
+#11 5.770 Selecting previously unselected package liblua5.3-0:amd64.
+#11 5.772 Preparing to unpack .../27-liblua5.3-0_5.3.6-2_amd64.deb ...
+#11 5.776 Unpacking liblua5.3-0:amd64 (5.3.6-2) ...
+#11 5.820 Selecting previously unselected package libicu72:amd64.
+#11 5.821 Preparing to unpack .../28-libicu72_72.1-3+deb12u1_amd64.deb ...
+#11 5.826 Unpacking libicu72:amd64 (72.1-3+deb12u1) ...
+#11 6.583 Selecting previously unselected package libxml2:amd64.
+#11 6.584 Preparing to unpack .../29-libxml2_2.9.14+dfsg-1.3~deb12u2_amd64.deb ...
+#11 6.588 Unpacking libxml2:amd64 (2.9.14+dfsg-1.3~deb12u2) ...
+#11 6.659 Selecting previously unselected package apache2-bin.
+#11 6.660 Preparing to unpack .../30-apache2-bin_2.4.62-1~deb12u2_amd64.deb ...
+#11 6.664 Unpacking apache2-bin (2.4.62-1~deb12u2) ...
+#11 6.803 Selecting previously unselected package apache2-data.
+#11 6.805 Preparing to unpack .../31-apache2-data_2.4.62-1~deb12u2_all.deb ...
+#11 6.809 Unpacking apache2-data (2.4.62-1~deb12u2) ...
+#11 6.879 Selecting previously unselected package apache2-utils.
+#11 6.880 Preparing to unpack .../32-apache2-utils_2.4.62-1~deb12u2_amd64.deb ...
+#11 6.884 Unpacking apache2-utils (2.4.62-1~deb12u2) ...
+#11 6.919 Selecting previously unselected package media-types.
+#11 6.920 Preparing to unpack .../33-media-types_10.0.0_all.deb ...
+#11 6.924 Unpacking media-types (10.0.0) ...
+#11 6.960 Selecting previously unselected package libncursesw6:amd64.
+#11 6.961 Preparing to unpack .../34-libncursesw6_6.4-4_amd64.deb ...
+#11 6.965 Unpacking libncursesw6:amd64 (6.4-4) ...
+#11 7.003 Selecting previously unselected package libproc2-0:amd64.
+#11 7.004 Preparing to unpack .../35-libproc2-0_2%3a4.0.2-3_amd64.deb ...
+#11 7.008 Unpacking libproc2-0:amd64 (2:4.0.2-3) ...
+#11 7.048 Selecting previously unselected package procps.
+#11 7.049 Preparing to unpack .../36-procps_2%3a4.0.2-3_amd64.deb ...
+#11 7.060 Unpacking procps (2:4.0.2-3) ...
+#11 7.161 Selecting previously unselected package apache2.
+#11 7.162 Preparing to unpack .../37-apache2_2.4.62-1~deb12u2_amd64.deb ...
+#11 7.170 Unpacking apache2 (2.4.62-1~deb12u2) ...
+#11 7.230 Selecting previously unselected package netbase.
+#11 7.231 Preparing to unpack .../38-netbase_6.4_all.deb ...
+#11 7.236 Unpacking netbase (6.4) ...
+#11 7.267 Selecting previously unselected package openssl.
+#11 7.268 Preparing to unpack .../39-openssl_3.0.17-1~deb12u2_amd64.deb ...
+#11 7.272 Unpacking openssl (3.0.17-1~deb12u2) ...
+#11 7.389 Selecting previously unselected package ca-certificates.
+#11 7.390 Preparing to unpack .../40-ca-certificates_20230311+deb12u1_all.deb ...
+#11 7.394 Unpacking ca-certificates (20230311+deb12u1) ...
+#11 7.449 Selecting previously unselected package krb5-locales.
+#11 7.451 Preparing to unpack .../41-krb5-locales_1.20.1-2+deb12u3_all.deb ...
+#11 7.455 Unpacking krb5-locales (1.20.1-2+deb12u3) ...
+#11 7.488 Selecting previously unselected package libgpm2:amd64.
+#11 7.488 Preparing to unpack .../42-libgpm2_1.20.7-10+b1_amd64.deb ...
+#11 7.492 Unpacking libgpm2:amd64 (1.20.7-10+b1) ...
+#11 7.518 Selecting previously unselected package libldap-common.
+#11 7.519 Preparing to unpack .../43-libldap-common_2.5.13+dfsg-5_all.deb ...
+#11 7.524 Unpacking libldap-common (2.5.13+dfsg-5) ...
+#11 7.560 Selecting previously unselected package libsasl2-modules:amd64.
+#11 7.561 Preparing to unpack .../44-libsasl2-modules_2.1.28+dfsg-10_amd64.deb ...
+#11 7.568 Unpacking libsasl2-modules:amd64 (2.1.28+dfsg-10) ...
+#11 7.603 Selecting previously unselected package psmisc.
+#11 7.604 Preparing to unpack .../45-psmisc_23.6-1_amd64.deb ...
+#11 7.609 Unpacking psmisc (23.6-1) ...
+#11 7.683 Selecting previously unselected package publicsuffix.
+#11 7.685 Preparing to unpack .../46-publicsuffix_20230209.2326-1_all.deb ...
+#11 7.689 Unpacking publicsuffix (20230209.2326-1) ...
+#11 7.733 Selecting previously unselected package ssl-cert.
+#11 7.735 Preparing to unpack .../47-ssl-cert_1.1.2_all.deb ...
+#11 7.739 Unpacking ssl-cert (1.1.2) ...
+#11 7.777 Setting up libexpat1:amd64 (2.5.0-1+deb12u1) ...
+#11 7.787 Setting up media-types (10.0.0) ...
+#11 7.801 Setting up libkeyutils1:amd64 (1.6.3-2) ...
+#11 7.811 Setting up libpsl5:amd64 (0.21.2-1) ...
+#11 7.820 Setting up libgpm2:amd64 (1.20.7-10+b1) ...
+#11 7.830 Setting up libicu72:amd64 (72.1-3+deb12u1) ...
+#11 7.840 Setting up psmisc (23.6-1) ...
+#11 7.852 Setting up libbrotli1:amd64 (1.0.9-2+b6) ...
+#11 7.862 Setting up libsqlite3-0:amd64 (3.40.1-2+deb12u1) ...
+#11 7.873 Setting up libssl3:amd64 (3.0.17-1~deb12u2) ...
+#11 7.883 Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u2) ...
+#11 7.893 Setting up libapr1:amd64 (1.7.2-3+deb12u1) ...
+#11 7.903 Setting up krb5-locales (1.20.1-2+deb12u3) ...
+#11 7.913 Setting up libldap-common (2.5.13+dfsg-5) ...
+#11 7.926 Setting up libjansson4:amd64 (2.14-2) ...
+#11 7.935 Setting up libkrb5support0:amd64 (1.20.1-2+deb12u3) ...
+#11 7.944 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#11 7.953 Setting up perl-modules-5.36 (5.36.0-7+deb12u2) ...
+#11 7.963 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#11 7.973 Setting up libproc2-0:amd64 (2:4.0.2-3) ...
+#11 7.983 Setting up libncursesw6:amd64 (6.4-4) ...
+#11 7.994 Setting up libk5crypto3:amd64 (1.20.1-2+deb12u3) ...
+#11 8.004 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#11 8.014 Setting up liblua5.3-0:amd64 (5.3.6-2) ...
+#11 8.024 Setting up procps (2:4.0.2-3) ...
+#11 8.076 Setting up libssh2-1:amd64 (1.10.0-3+b1) ...
+#11 8.092 Setting up netbase (6.4) ...
+#11 8.121 Setting up libkrb5-3:amd64 (1.20.1-2+deb12u3) ...
+#11 8.133 Setting up apache2-data (2.4.62-1~deb12u2) ...
+#11 8.145 Setting up openssl (3.0.17-1~deb12u2) ...
+#11 8.160 Setting up publicsuffix (20230209.2326-1) ...
+#11 8.169 Setting up libxml2:amd64 (2.9.14+dfsg-1.3~deb12u2) ...
+#11 8.179 Setting up libgdbm6:amd64 (1.23-3) ...
+#11 8.188 Setting up libaprutil1:amd64 (1.6.3-1) ...
+#11 8.198 Setting up libsasl2-modules:amd64 (2.1.28+dfsg-10) ...
+#11 8.211 Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.3-1) ...
+#11 8.221 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#11 8.232 Setting up ca-certificates (20230311+deb12u1) ...
+#11 8.308 debconf: unable to initialize frontend: Dialog
+#11 8.308 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 8.308 debconf: falling back to frontend: Readline
+#11 8.321 debconf: unable to initialize frontend: Readline
+#11 8.321 debconf: (This frontend requires a controlling tty.)
+#11 8.321 debconf: falling back to frontend: Teletype
+#11 8.727 Updating certificates in /etc/ssl/certs...
+#11 9.229 142 added, 0 removed; done.
+#11 9.256 Setting up ssl-cert (1.1.2) ...
+#11 9.314 debconf: unable to initialize frontend: Dialog
+#11 9.314 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 9.314 debconf: falling back to frontend: Readline
+#11 9.320 debconf: unable to initialize frontend: Readline
+#11 9.320 debconf: (This frontend requires a controlling tty.)
+#11 9.320 debconf: falling back to frontend: Teletype
+#11 9.590 Setting up libgssapi-krb5-2:amd64 (1.20.1-2+deb12u3) ...
+#11 9.600 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#11 9.610 Setting up libcurl4:amd64 (7.88.1-10+deb12u12) ...
+#11 9.621 Setting up libperl5.36:amd64 (5.36.0-7+deb12u2) ...
+#11 9.630 Setting up apache2-utils (2.4.62-1~deb12u2) ...
+#11 9.641 Setting up libaprutil1-ldap:amd64 (1.6.3-1) ...
+#11 9.651 Setting up perl (5.36.0-7+deb12u2) ...
+#11 9.670 Setting up apache2-bin (2.4.62-1~deb12u2) ...
+#11 9.680 Setting up apache2 (2.4.62-1~deb12u2) ...
+#11 10.27 Enabling module mpm_event.
+#11 10.30 Enabling module authz_core.
+#11 10.30 Enabling module authz_host.
+#11 10.33 Enabling module authn_core.
+#11 10.33 Enabling module auth_basic.
+#11 10.35 Enabling module access_compat.
+#11 10.38 Enabling module authn_file.
+#11 10.41 Enabling module authz_user.
+#11 10.43 Enabling module alias.
+#11 10.46 Enabling module dir.
+#11 10.48 Enabling module autoindex.
+#11 10.51 Enabling module env.
+#11 10.54 Enabling module mime.
+#11 10.57 Enabling module negotiation.
+#11 10.60 Enabling module setenvif.
+#11 10.62 Enabling module filter.
+#11 10.65 Enabling module deflate.
+#11 10.68 Enabling module status.
+#11 10.70 Enabling module reqtimeout.
+#11 10.74 Enabling conf charset.
+#11 10.77 Enabling conf localized-error-pages.
+#11 10.80 Enabling conf other-vhosts-access-log.
+#11 10.82 Enabling conf security.
+#11 10.87 Enabling conf serve-cgi-bin.
+#11 10.91 Enabling site 000-default.
+#11 10.94 invoke-rc.d: could not determine current runlevel
+#11 10.94 invoke-rc.d: policy-rc.d denied execution of start.
+#11 11.29 Processing triggers for libc-bin (2.36-9+deb12u10) ...
+#11 11.34 Processing triggers for ca-certificates (20230311+deb12u1) ...
+#11 11.35 Updating certificates in /etc/ssl/certs...
+#11 11.71 0 added, 0 removed; done.
+#11 11.71 Running hooks in /etc/ca-certificates/update.d...
+#11 11.72 done.
+#11 11.76 Reading package lists...
+#11 12.24 Building dependency tree...
+#11 12.44 Reading state information...
+#11 12.56 The following additional packages will be installed:
+#11 12.56   bzip2 file libbsd0 libmagic-mgc libmagic1 lynx-common mailcap xz-utils
+#11 12.56 Suggested packages:
+#11 12.56   bzip2-doc
+#11 12.62 The following NEW packages will be installed:
+#11 12.62   bzip2 file libbsd0 libmagic-mgc libmagic1 lynx lynx-common mailcap xz-utils
+#11 12.86 0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
+#11 12.86 Need to get 2924 kB of archives.
+#11 12.86 After this operation, 16.1 MB of additional disk space will be used.
+#11 12.86 Get:1 http://deb.debian.org/debian bookworm/main amd64 bzip2 amd64 1.0.8-5+b1 [49.8 kB]
+#11 12.88 Get:2 http://deb.debian.org/debian bookworm/main amd64 libmagic-mgc amd64 1:5.44-3 [305 kB]
+#11 12.90 Get:3 http://deb.debian.org/debian bookworm/main amd64 libmagic1 amd64 1:5.44-3 [104 kB]
+#11 12.90 Get:4 http://deb.debian.org/debian bookworm/main amd64 file amd64 1:5.44-3 [42.5 kB]
+#11 12.90 Get:5 http://deb.debian.org/debian bookworm/main amd64 xz-utils amd64 5.4.1-1 [471 kB]
+#11 12.91 Get:6 http://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.7-2 [117 kB]
+#11 12.92 Get:7 http://deb.debian.org/debian bookworm/main amd64 lynx-common all 2.9.0dev.12-1 [1166 kB]
+#11 13.05 Get:8 http://deb.debian.org/debian bookworm/main amd64 lynx amd64 2.9.0dev.12-1 [637 kB]
+#11 13.06 Get:9 http://deb.debian.org/debian bookworm/main amd64 mailcap all 3.70+nmu1 [32.0 kB]
+#11 13.16 debconf: delaying package configuration, since apt-utils is not installed
+#11 13.19 Fetched 2924 kB in 0s (6661 kB/s)
+#11 13.21 Selecting previously unselected package bzip2.
+#11 13.21 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9836 files and directories currently installed.)
+#11 13.21 Preparing to unpack .../0-bzip2_1.0.8-5+b1_amd64.deb ...
+#11 13.22 Unpacking bzip2 (1.0.8-5+b1) ...
+#11 13.25 Selecting previously unselected package libmagic-mgc.
+#11 13.25 Preparing to unpack .../1-libmagic-mgc_1%3a5.44-3_amd64.deb ...
+#11 13.25 Unpacking libmagic-mgc (1:5.44-3) ...
+#11 13.31 Selecting previously unselected package libmagic1:amd64.
+#11 13.31 Preparing to unpack .../2-libmagic1_1%3a5.44-3_amd64.deb ...
+#11 13.32 Unpacking libmagic1:amd64 (1:5.44-3) ...
+#11 13.35 Selecting previously unselected package file.
+#11 13.35 Preparing to unpack .../3-file_1%3a5.44-3_amd64.deb ...
+#11 13.35 Unpacking file (1:5.44-3) ...
+#11 13.38 Selecting previously unselected package xz-utils.
+#11 13.38 Preparing to unpack .../4-xz-utils_5.4.1-1_amd64.deb ...
+#11 13.39 Unpacking xz-utils (5.4.1-1) ...
+#11 13.46 Selecting previously unselected package libbsd0:amd64.
+#11 13.46 Preparing to unpack .../5-libbsd0_0.11.7-2_amd64.deb ...
+#11 13.46 Unpacking libbsd0:amd64 (0.11.7-2) ...
+#11 13.50 Selecting previously unselected package lynx-common.
+#11 13.50 Preparing to unpack .../6-lynx-common_2.9.0dev.12-1_all.deb ...
+#11 13.51 Unpacking lynx-common (2.9.0dev.12-1) ...
+#11 13.61 Selecting previously unselected package lynx.
+#11 13.61 Preparing to unpack .../7-lynx_2.9.0dev.12-1_amd64.deb ...
+#11 13.61 Unpacking lynx (2.9.0dev.12-1) ...
+#11 13.69 Selecting previously unselected package mailcap.
+#11 13.69 Preparing to unpack .../8-mailcap_3.70+nmu1_all.deb ...
+#11 13.69 Unpacking mailcap (3.70+nmu1) ...
+#11 13.73 Setting up libmagic-mgc (1:5.44-3) ...
+#11 13.74 Setting up libmagic1:amd64 (1:5.44-3) ...
+#11 13.75 Setting up file (1:5.44-3) ...
+#11 13.77 Setting up bzip2 (1.0.8-5+b1) ...
+#11 13.78 Setting up xz-utils (5.4.1-1) ...
+#11 13.79 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+#11 13.80 Setting up lynx-common (2.9.0dev.12-1) ...
+#11 13.81 Setting up libbsd0:amd64 (0.11.7-2) ...
+#11 13.82 Setting up mailcap (3.70+nmu1) ...
+#11 13.84 Setting up lynx (2.9.0dev.12-1) ...
+#11 13.85 update-alternatives: using /usr/bin/lynx to provide /usr/bin/www-browser (www-browser) in auto mode
+#11 13.86 Processing triggers for libc-bin (2.36-9+deb12u10) ...
+#11 DONE 14.0s
+
+#12 [stage-0  4/17] RUN apt-get install -y git &&     apt-get clean
+#12 0.440 Reading package lists...
+#12 1.002 Building dependency tree...
+#12 1.196 Reading state information...
+#12 1.431 The following additional packages will be installed:
+#12 1.432   git-man less libcbor0.8 libcurl3-gnutls libedit2 liberror-perl libfido2-1
+#12 1.432   libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1
+#12 1.433   openssh-client patch xauth
+#12 1.435 Suggested packages:
+#12 1.435   gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui
+#12 1.435   gitk gitweb git-cvs git-mediawiki git-svn keychain libpam-ssh monkeysphere
+#12 1.435   ssh-askpass ed diffutils-doc
+#12 1.540 The following NEW packages will be installed:
+#12 1.540   git git-man less libcbor0.8 libcurl3-gnutls libedit2 liberror-perl
+#12 1.542   libfido2-1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1
+#12 1.543   openssh-client patch xauth
+#12 1.599 0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+#12 1.599 Need to get 12.5 MB of archives.
+#12 1.599 After this operation, 60.1 MB of additional disk space will be used.
+#12 1.599 Get:1 http://deb.debian.org/debian bookworm/main amd64 less amd64 590-2.1~deb12u2 [132 kB]
+#12 1.615 Get:2 http://deb.debian.org/debian bookworm/main amd64 libedit2 amd64 3.1-20221030-2 [93.0 kB]
+#12 1.623 Get:3 http://deb.debian.org/debian bookworm/main amd64 libcbor0.8 amd64 0.8.0-2+b1 [27.4 kB]
+#12 1.623 Get:4 http://deb.debian.org/debian bookworm/main amd64 libfido2-1 amd64 1.12.0-2+b1 [77.2 kB]
+#12 1.627 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 openssh-client amd64 1:9.2p1-2+deb12u7 [992 kB]
+#12 1.654 Get:6 http://deb.debian.org/debian bookworm/main amd64 libcurl3-gnutls amd64 7.88.1-10+deb12u12 [386 kB]
+#12 1.667 Get:7 http://deb.debian.org/debian bookworm/main amd64 liberror-perl all 0.17029-2 [29.0 kB]
+#12 1.668 Get:8 http://deb.debian.org/debian bookworm/main amd64 git-man all 1:2.39.5-0+deb12u2 [2053 kB]
+#12 1.773 Get:9 http://deb.debian.org/debian bookworm/main amd64 git amd64 1:2.39.5-0+deb12u2 [7260 kB]
+#12 2.063 Get:10 http://deb.debian.org/debian bookworm/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+#12 2.064 Get:11 http://deb.debian.org/debian bookworm/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#12 2.064 Get:12 http://deb.debian.org/debian bookworm/main amd64 libxcb1 amd64 1.15-1 [144 kB]
+#12 2.067 Get:13 http://deb.debian.org/debian bookworm/main amd64 libx11-data all 2:1.8.4-2+deb12u2 [292 kB]
+#12 2.077 Get:14 http://deb.debian.org/debian bookworm/main amd64 libx11-6 amd64 2:1.8.4-2+deb12u2 [760 kB]
+#12 2.093 Get:15 http://deb.debian.org/debian bookworm/main amd64 libxext6 amd64 2:1.3.4-1+b1 [52.9 kB]
+#12 2.094 Get:16 http://deb.debian.org/debian bookworm/main amd64 libxmuu1 amd64 2:1.1.3-3 [23.9 kB]
+#12 2.094 Get:17 http://deb.debian.org/debian bookworm/main amd64 patch amd64 2.7.6-7 [128 kB]
+#12 2.097 Get:18 http://deb.debian.org/debian bookworm/main amd64 xauth amd64 1:1.1.2-1 [36.0 kB]
+#12 2.251 debconf: delaying package configuration, since apt-utils is not installed
+#12 2.324 Fetched 12.5 MB in 1s (23.2 MB/s)
+#12 2.361 Selecting previously unselected package less.
+#12 2.361 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10217 files and directories currently installed.)
+#12 2.373 Preparing to unpack .../00-less_590-2.1~deb12u2_amd64.deb ...
+#12 2.381 Unpacking less (590-2.1~deb12u2) ...
+#12 2.453 Selecting previously unselected package libedit2:amd64.
+#12 2.454 Preparing to unpack .../01-libedit2_3.1-20221030-2_amd64.deb ...
+#12 2.467 Unpacking libedit2:amd64 (3.1-20221030-2) ...
+#12 2.538 Selecting previously unselected package libcbor0.8:amd64.
+#12 2.540 Preparing to unpack .../02-libcbor0.8_0.8.0-2+b1_amd64.deb ...
+#12 2.547 Unpacking libcbor0.8:amd64 (0.8.0-2+b1) ...
+#12 2.605 Selecting previously unselected package libfido2-1:amd64.
+#12 2.607 Preparing to unpack .../03-libfido2-1_1.12.0-2+b1_amd64.deb ...
+#12 2.614 Unpacking libfido2-1:amd64 (1.12.0-2+b1) ...
+#12 2.679 Selecting previously unselected package openssh-client.
+#12 2.680 Preparing to unpack .../04-openssh-client_1%3a9.2p1-2+deb12u7_amd64.deb ...
+#12 2.695 Unpacking openssh-client (1:9.2p1-2+deb12u7) ...
+#12 2.981 Selecting previously unselected package libcurl3-gnutls:amd64.
+#12 2.982 Preparing to unpack .../05-libcurl3-gnutls_7.88.1-10+deb12u12_amd64.deb ...
+#12 2.989 Unpacking libcurl3-gnutls:amd64 (7.88.1-10+deb12u12) ...
+#12 3.059 Selecting previously unselected package liberror-perl.
+#12 3.061 Preparing to unpack .../06-liberror-perl_0.17029-2_all.deb ...
+#12 3.068 Unpacking liberror-perl (0.17029-2) ...
+#12 3.114 Selecting previously unselected package git-man.
+#12 3.116 Preparing to unpack .../07-git-man_1%3a2.39.5-0+deb12u2_all.deb ...
+#12 3.123 Unpacking git-man (1:2.39.5-0+deb12u2) ...
+#12 3.300 Selecting previously unselected package git.
+#12 3.301 Preparing to unpack .../08-git_1%3a2.39.5-0+deb12u2_amd64.deb ...
+#12 3.311 Unpacking git (1:2.39.5-0+deb12u2) ...
+#12 4.442 Selecting previously unselected package libxau6:amd64.
+#12 4.444 Preparing to unpack .../09-libxau6_1%3a1.0.9-1_amd64.deb ...
+#12 4.451 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+#12 4.499 Selecting previously unselected package libxdmcp6:amd64.
+#12 4.500 Preparing to unpack .../10-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+#12 4.506 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+#12 4.562 Selecting previously unselected package libxcb1:amd64.
+#12 4.564 Preparing to unpack .../11-libxcb1_1.15-1_amd64.deb ...
+#12 4.570 Unpacking libxcb1:amd64 (1.15-1) ...
+#12 4.622 Selecting previously unselected package libx11-data.
+#12 4.623 Preparing to unpack .../12-libx11-data_2%3a1.8.4-2+deb12u2_all.deb ...
+#12 4.630 Unpacking libx11-data (2:1.8.4-2+deb12u2) ...
+#12 4.766 Selecting previously unselected package libx11-6:amd64.
+#12 4.768 Preparing to unpack .../13-libx11-6_2%3a1.8.4-2+deb12u2_amd64.deb ...
+#12 4.776 Unpacking libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+#12 4.880 Selecting previously unselected package libxext6:amd64.
+#12 4.881 Preparing to unpack .../14-libxext6_2%3a1.3.4-1+b1_amd64.deb ...
+#12 4.888 Unpacking libxext6:amd64 (2:1.3.4-1+b1) ...
+#12 4.944 Selecting previously unselected package libxmuu1:amd64.
+#12 4.946 Preparing to unpack .../15-libxmuu1_2%3a1.1.3-3_amd64.deb ...
+#12 4.952 Unpacking libxmuu1:amd64 (2:1.1.3-3) ...
+#12 4.992 Selecting previously unselected package patch.
+#12 4.993 Preparing to unpack .../16-patch_2.7.6-7_amd64.deb ...
+#12 5.000 Unpacking patch (2.7.6-7) ...
+#12 5.050 Selecting previously unselected package xauth.
+#12 5.052 Preparing to unpack .../17-xauth_1%3a1.1.2-1_amd64.deb ...
+#12 5.058 Unpacking xauth (1:1.1.2-1) ...
+#12 5.108 Setting up libxau6:amd64 (1:1.0.9-1) ...
+#12 5.129 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+#12 5.148 Setting up libxcb1:amd64 (1.15-1) ...
+#12 5.167 Setting up libcbor0.8:amd64 (0.8.0-2+b1) ...
+#12 5.186 Setting up libedit2:amd64 (3.1-20221030-2) ...
+#12 5.204 Setting up less (590-2.1~deb12u2) ...
+#12 5.232 Setting up libcurl3-gnutls:amd64 (7.88.1-10+deb12u12) ...
+#12 5.251 Setting up liberror-perl (0.17029-2) ...
+#12 5.270 Setting up libx11-data (2:1.8.4-2+deb12u2) ...
+#12 5.290 Setting up patch (2.7.6-7) ...
+#12 5.311 Setting up git-man (1:2.39.5-0+deb12u2) ...
+#12 5.328 Setting up libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+#12 5.346 Setting up libfido2-1:amd64 (1.12.0-2+b1) ...
+#12 5.363 Setting up libxmuu1:amd64 (2:1.1.3-3) ...
+#12 5.381 Setting up openssh-client (1:9.2p1-2+deb12u7) ...
+#12 5.469 Setting up libxext6:amd64 (2:1.3.4-1+b1) ...
+#12 5.488 Setting up git (1:2.39.5-0+deb12u2) ...
+#12 5.518 Setting up xauth (1:1.1.2-1) ...
+#12 5.537 Processing triggers for libc-bin (2.36-9+deb12u10) ...
+#12 5.561 Processing triggers for mailcap (3.70+nmu1) ...
+#12 DONE 5.7s
+
+#13 [stage-0  5/17] RUN apt install iputils-ping -y &&     apt install net-tools -y &&     apt install curl -y &&     apt install nano -y &&     apt install wget -y &&     apt-get clean
+#13 0.447 
+#13 0.447 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#13 0.447 
+#13 0.450 Reading package lists...
+#13 0.952 Building dependency tree...
+#13 1.119 Reading state information...
+#13 1.346 The following additional packages will be installed:
+#13 1.347   libcap2-bin libpam-cap
+#13 1.382 The following NEW packages will be installed:
+#13 1.384   iputils-ping libcap2-bin libpam-cap
+#13 1.430 0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+#13 1.430 Need to get 96.6 kB of archives.
+#13 1.430 After this operation, 312 kB of additional disk space will be used.
+#13 1.430 Get:1 http://deb.debian.org/debian bookworm/main amd64 libcap2-bin amd64 1:2.66-4+deb12u1 [34.8 kB]
+#13 1.439 Get:2 http://deb.debian.org/debian bookworm/main amd64 iputils-ping amd64 3:20221126-1+deb12u1 [47.2 kB]
+#13 1.440 Get:3 http://deb.debian.org/debian bookworm/main amd64 libpam-cap amd64 1:2.66-4+deb12u1 [14.7 kB]
+#13 1.547 debconf: delaying package configuration, since apt-utils is not installed
+#13 1.575 Fetched 96.6 kB in 0s (2060 kB/s)
+#13 1.593 Selecting previously unselected package libcap2-bin.
+#13 1.593 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11740 files and directories currently installed.)
+#13 1.601 Preparing to unpack .../libcap2-bin_1%3a2.66-4+deb12u1_amd64.deb ...
+#13 1.607 Unpacking libcap2-bin (1:2.66-4+deb12u1) ...
+#13 1.650 Selecting previously unselected package iputils-ping.
+#13 1.650 Preparing to unpack .../iputils-ping_3%3a20221126-1+deb12u1_amd64.deb ...
+#13 1.656 Unpacking iputils-ping (3:20221126-1+deb12u1) ...
+#13 1.710 Selecting previously unselected package libpam-cap:amd64.
+#13 1.711 Preparing to unpack .../libpam-cap_1%3a2.66-4+deb12u1_amd64.deb ...
+#13 1.719 Unpacking libpam-cap:amd64 (1:2.66-4+deb12u1) ...
+#13 1.768 Setting up libcap2-bin (1:2.66-4+deb12u1) ...
+#13 1.790 Setting up libpam-cap:amd64 (1:2.66-4+deb12u1) ...
+#13 1.867 debconf: unable to initialize frontend: Dialog
+#13 1.867 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#13 1.867 debconf: falling back to frontend: Readline
+#13 1.873 debconf: unable to initialize frontend: Readline
+#13 1.873 debconf: (This frontend requires a controlling tty.)
+#13 1.873 debconf: falling back to frontend: Teletype
+#13 1.946 Setting up iputils-ping (3:20221126-1+deb12u1) ...
+#13 1.995 
+#13 1.995 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#13 1.995 
+#13 1.997 Reading package lists...
+#13 2.501 Building dependency tree...
+#13 2.687 Reading state information...
+#13 2.857 The following NEW packages will be installed:
+#13 2.857   net-tools
+#13 2.896 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+#13 2.896 Need to get 243 kB of archives.
+#13 2.896 After this operation, 1001 kB of additional disk space will be used.
+#13 2.896 Get:1 http://deb.debian.org/debian-security bookworm-security/main amd64 net-tools amd64 2.10-0.1+deb12u2 [243 kB]
+#13 3.004 debconf: delaying package configuration, since apt-utils is not installed
+#13 3.035 Fetched 243 kB in 0s (5849 kB/s)
+#13 3.053 Selecting previously unselected package net-tools.
+#13 3.053 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11776 files and directories currently installed.)
+#13 3.061 Preparing to unpack .../net-tools_2.10-0.1+deb12u2_amd64.deb ...
+#13 3.065 Unpacking net-tools (2.10-0.1+deb12u2) ...
+#13 3.119 Setting up net-tools (2.10-0.1+deb12u2) ...
+#13 3.148 
+#13 3.148 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#13 3.148 
+#13 3.150 Reading package lists...
+#13 3.697 Building dependency tree...
+#13 3.884 Reading state information...
+#13 4.127 The following NEW packages will be installed:
+#13 4.129   curl
+#13 4.166 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+#13 4.166 Need to get 315 kB of archives.
+#13 4.166 After this operation, 501 kB of additional disk space will be used.
+#13 4.166 Get:1 http://deb.debian.org/debian bookworm/main amd64 curl amd64 7.88.1-10+deb12u12 [315 kB]
+#13 4.316 debconf: delaying package configuration, since apt-utils is not installed
+#13 4.343 Fetched 315 kB in 0s (6221 kB/s)
+#13 4.356 Selecting previously unselected package curl.
+#13 4.356 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11831 files and directories currently installed.)
+#13 4.365 Preparing to unpack .../curl_7.88.1-10+deb12u12_amd64.deb ...
+#13 4.369 Unpacking curl (7.88.1-10+deb12u12) ...
+#13 4.414 Setting up curl (7.88.1-10+deb12u12) ...
+#13 4.443 
+#13 4.443 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#13 4.443 
+#13 4.445 Reading package lists...
+#13 4.913 Building dependency tree...
+#13 5.075 Reading state information...
+#13 5.257 Suggested packages:
+#13 5.257   hunspell
+#13 5.286 The following NEW packages will be installed:
+#13 5.286   nano
+#13 5.317 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+#13 5.317 Need to get 690 kB of archives.
+#13 5.317 After this operation, 2871 kB of additional disk space will be used.
+#13 5.317 Get:1 http://deb.debian.org/debian bookworm/main amd64 nano amd64 7.2-1+deb12u1 [690 kB]
+#13 5.490 debconf: delaying package configuration, since apt-utils is not installed
+#13 5.534 Fetched 690 kB in 0s (13.9 MB/s)
+#13 5.556 Selecting previously unselected package nano.
+#13 5.556 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11840 files and directories currently installed.)
+#13 5.563 Preparing to unpack .../nano_7.2-1+deb12u1_amd64.deb ...
+#13 5.567 Unpacking nano (7.2-1+deb12u1) ...
+#13 5.672 Setting up nano (7.2-1+deb12u1) ...
+#13 5.689 update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+#13 5.693 update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+#13 5.722 
+#13 5.722 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#13 5.722 
+#13 5.724 Reading package lists...
+#13 6.362 Building dependency tree...
+#13 6.566 Reading state information...
+#13 6.804 The following NEW packages will be installed:
+#13 6.804   wget
+#13 6.841 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+#13 6.841 Need to get 937 kB of archives.
+#13 6.841 After this operation, 3606 kB of additional disk space will be used.
+#13 6.841 Get:1 http://deb.debian.org/debian bookworm/main amd64 wget amd64 1.21.3-1+deb12u1 [937 kB]
+#13 6.984 debconf: delaying package configuration, since apt-utils is not installed
+#13 7.009 Fetched 937 kB in 0s (14.5 MB/s)
+#13 7.026 Selecting previously unselected package wget.
+#13 7.026 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11952 files and directories currently installed.)
+#13 7.035 Preparing to unpack .../wget_1.21.3-1+deb12u1_amd64.deb ...
+#13 7.040 Unpacking wget (1.21.3-1+deb12u1) ...
+#13 7.165 Setting up wget (1.21.3-1+deb12u1) ...
+#13 DONE 7.2s
+
+#14 [stage-0  6/17] RUN apt install php8.2 -y &&     apt install php8.2-xdebug -y &&     apt-get clean
+#14 0.484 
+#14 0.484 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#14 0.484 
+#14 0.489 Reading package lists...
+#14 1.095 Building dependency tree...
+#14 1.369 Reading state information...
+#14 1.572 The following additional packages will be installed:
+#14 1.573   libapache2-mod-php8.2 libargon2-1 libsodium23 php-common php8.2-cli
+#14 1.573   php8.2-common php8.2-opcache php8.2-readline sensible-utils ucf
+#14 1.575 Suggested packages:
+#14 1.575   php-pear
+#14 1.634 The following NEW packages will be installed:
+#14 1.635   libapache2-mod-php8.2 libargon2-1 libsodium23 php-common php8.2 php8.2-cli
+#14 1.635   php8.2-common php8.2-opcache php8.2-readline sensible-utils ucf
+#14 1.671 0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+#14 1.671 Need to get 4780 kB of archives.
+#14 1.671 After this operation, 22.0 MB of additional disk space will be used.
+#14 1.671 Get:1 http://deb.debian.org/debian bookworm/main amd64 sensible-utils all 0.0.17+nmu1 [19.0 kB]
+#14 1.680 Get:2 http://deb.debian.org/debian bookworm/main amd64 ucf all 3.0043+nmu1+deb12u1 [55.3 kB]
+#14 1.686 Get:3 http://deb.debian.org/debian bookworm/main amd64 php-common all 2:93 [13.1 kB]
+#14 1.687 Get:4 http://deb.debian.org/debian-security bookworm-security/main amd64 php8.2-common amd64 8.2.29-1~deb12u1 [689 kB]
+#14 1.715 Get:5 http://deb.debian.org/debian-security bookworm-security/main amd64 php8.2-opcache amd64 8.2.29-1~deb12u1 [346 kB]
+#14 1.725 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 php8.2-readline amd64 8.2.29-1~deb12u1 [12.4 kB]
+#14 1.725 Get:7 http://deb.debian.org/debian bookworm/main amd64 libargon2-1 amd64 0~20171227-0.3+deb12u1 [19.4 kB]
+#14 1.726 Get:8 http://deb.debian.org/debian bookworm/main amd64 libsodium23 amd64 1.0.18-1 [161 kB]
+#14 1.730 Get:9 http://deb.debian.org/debian-security bookworm-security/main amd64 php8.2-cli amd64 8.2.29-1~deb12u1 [1738 kB]
+#14 1.772 Get:10 http://deb.debian.org/debian-security bookworm-security/main amd64 libapache2-mod-php8.2 amd64 8.2.29-1~deb12u1 [1679 kB]
+#14 1.814 Get:11 http://deb.debian.org/debian-security bookworm-security/main amd64 php8.2 all 8.2.29-1~deb12u1 [47.2 kB]
+#14 1.939 debconf: delaying package configuration, since apt-utils is not installed
+#14 1.973 Fetched 4780 kB in 0s (28.1 MB/s)
+#14 1.995 Selecting previously unselected package sensible-utils.
+#14 1.995 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12046 files and directories currently installed.)
+#14 2.006 Preparing to unpack .../00-sensible-utils_0.0.17+nmu1_all.deb ...
+#14 2.011 Unpacking sensible-utils (0.0.17+nmu1) ...
+#14 2.066 Selecting previously unselected package ucf.
+#14 2.068 Preparing to unpack .../01-ucf_3.0043+nmu1+deb12u1_all.deb ...
+#14 2.074 Moving old data out of the way
+#14 2.076 Unpacking ucf (3.0043+nmu1+deb12u1) ...
+#14 2.128 Selecting previously unselected package php-common.
+#14 2.130 Preparing to unpack .../02-php-common_2%3a93_all.deb ...
+#14 2.135 Unpacking php-common (2:93) ...
+#14 2.183 Selecting previously unselected package php8.2-common.
+#14 2.185 Preparing to unpack .../03-php8.2-common_8.2.29-1~deb12u1_amd64.deb ...
+#14 2.191 Unpacking php8.2-common (8.2.29-1~deb12u1) ...
+#14 2.494 Selecting previously unselected package php8.2-opcache.
+#14 2.496 Preparing to unpack .../04-php8.2-opcache_8.2.29-1~deb12u1_amd64.deb ...
+#14 2.505 Unpacking php8.2-opcache (8.2.29-1~deb12u1) ...
+#14 2.610 Selecting previously unselected package php8.2-readline.
+#14 2.611 Preparing to unpack .../05-php8.2-readline_8.2.29-1~deb12u1_amd64.deb ...
+#14 2.620 Unpacking php8.2-readline (8.2.29-1~deb12u1) ...
+#14 2.672 Selecting previously unselected package libargon2-1:amd64.
+#14 2.673 Preparing to unpack .../06-libargon2-1_0~20171227-0.3+deb12u1_amd64.deb ...
+#14 2.681 Unpacking libargon2-1:amd64 (0~20171227-0.3+deb12u1) ...
+#14 2.718 Selecting previously unselected package libsodium23:amd64.
+#14 2.720 Preparing to unpack .../07-libsodium23_1.0.18-1_amd64.deb ...
+#14 2.724 Unpacking libsodium23:amd64 (1.0.18-1) ...
+#14 2.775 Selecting previously unselected package php8.2-cli.
+#14 2.777 Preparing to unpack .../08-php8.2-cli_8.2.29-1~deb12u1_amd64.deb ...
+#14 2.782 Unpacking php8.2-cli (8.2.29-1~deb12u1) ...
+#14 3.203 Selecting previously unselected package libapache2-mod-php8.2.
+#14 3.205 Preparing to unpack .../09-libapache2-mod-php8.2_8.2.29-1~deb12u1_amd64.deb ...
+#14 3.213 Unpacking libapache2-mod-php8.2 (8.2.29-1~deb12u1) ...
+#14 3.494 Selecting previously unselected package php8.2.
+#14 3.496 Preparing to unpack .../10-php8.2_8.2.29-1~deb12u1_all.deb ...
+#14 3.500 Unpacking php8.2 (8.2.29-1~deb12u1) ...
+#14 3.540 Setting up php-common (2:93) ...
+#14 3.665 Setting up libsodium23:amd64 (1.0.18-1) ...
+#14 3.675 Setting up libargon2-1:amd64 (0~20171227-0.3+deb12u1) ...
+#14 3.685 Setting up sensible-utils (0.0.17+nmu1) ...
+#14 3.696 Setting up ucf (3.0043+nmu1+deb12u1) ...
+#14 3.778 debconf: unable to initialize frontend: Dialog
+#14 3.778 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 3.778 debconf: falling back to frontend: Readline
+#14 3.786 debconf: unable to initialize frontend: Readline
+#14 3.786 debconf: (This frontend requires a controlling tty.)
+#14 3.786 debconf: falling back to frontend: Teletype
+#14 3.819 Setting up php8.2-common (8.2.29-1~deb12u1) ...
+#14 3.919 debconf: unable to initialize frontend: Dialog
+#14 3.919 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 3.919 debconf: falling back to frontend: Readline
+#14 3.925 debconf: unable to initialize frontend: Readline
+#14 3.925 debconf: (This frontend requires a controlling tty.)
+#14 3.925 debconf: falling back to frontend: Teletype
+#14 3.955 
+#14 3.955 Creating config file /etc/php/8.2/mods-available/calendar.ini with new version
+#14 4.155 debconf: unable to initialize frontend: Dialog
+#14 4.155 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 4.155 debconf: falling back to frontend: Readline
+#14 4.162 debconf: unable to initialize frontend: Readline
+#14 4.162 debconf: (This frontend requires a controlling tty.)
+#14 4.162 debconf: falling back to frontend: Teletype
+#14 4.221 
+#14 4.221 Creating config file /etc/php/8.2/mods-available/ctype.ini with new version
+#14 4.402 debconf: unable to initialize frontend: Dialog
+#14 4.402 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 4.402 debconf: falling back to frontend: Readline
+#14 4.410 debconf: unable to initialize frontend: Readline
+#14 4.410 debconf: (This frontend requires a controlling tty.)
+#14 4.410 debconf: falling back to frontend: Teletype
+#14 4.441 
+#14 4.441 Creating config file /etc/php/8.2/mods-available/exif.ini with new version
+#14 4.674 debconf: unable to initialize frontend: Dialog
+#14 4.674 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 4.674 debconf: falling back to frontend: Readline
+#14 4.684 debconf: unable to initialize frontend: Readline
+#14 4.684 debconf: (This frontend requires a controlling tty.)
+#14 4.684 debconf: falling back to frontend: Teletype
+#14 4.723 
+#14 4.723 Creating config file /etc/php/8.2/mods-available/fileinfo.ini with new version
+#14 4.926 debconf: unable to initialize frontend: Dialog
+#14 4.926 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 4.926 debconf: falling back to frontend: Readline
+#14 4.933 debconf: unable to initialize frontend: Readline
+#14 4.933 debconf: (This frontend requires a controlling tty.)
+#14 4.933 debconf: falling back to frontend: Teletype
+#14 4.968 
+#14 4.968 Creating config file /etc/php/8.2/mods-available/ffi.ini with new version
+#14 5.184 debconf: unable to initialize frontend: Dialog
+#14 5.184 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 5.184 debconf: falling back to frontend: Readline
+#14 5.192 debconf: unable to initialize frontend: Readline
+#14 5.192 debconf: (This frontend requires a controlling tty.)
+#14 5.192 debconf: falling back to frontend: Teletype
+#14 5.225 
+#14 5.225 Creating config file /etc/php/8.2/mods-available/ftp.ini with new version
+#14 5.441 debconf: unable to initialize frontend: Dialog
+#14 5.441 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 5.441 debconf: falling back to frontend: Readline
+#14 5.448 debconf: unable to initialize frontend: Readline
+#14 5.448 debconf: (This frontend requires a controlling tty.)
+#14 5.448 debconf: falling back to frontend: Teletype
+#14 5.477 
+#14 5.477 Creating config file /etc/php/8.2/mods-available/gettext.ini with new version
+#14 5.682 debconf: unable to initialize frontend: Dialog
+#14 5.682 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 5.682 debconf: falling back to frontend: Readline
+#14 5.690 debconf: unable to initialize frontend: Readline
+#14 5.690 debconf: (This frontend requires a controlling tty.)
+#14 5.690 debconf: falling back to frontend: Teletype
+#14 5.721 
+#14 5.721 Creating config file /etc/php/8.2/mods-available/iconv.ini with new version
+#14 5.951 debconf: unable to initialize frontend: Dialog
+#14 5.951 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 5.951 debconf: falling back to frontend: Readline
+#14 5.958 debconf: unable to initialize frontend: Readline
+#14 5.958 debconf: (This frontend requires a controlling tty.)
+#14 5.958 debconf: falling back to frontend: Teletype
+#14 5.993 
+#14 5.993 Creating config file /etc/php/8.2/mods-available/pdo.ini with new version
+#14 6.217 debconf: unable to initialize frontend: Dialog
+#14 6.217 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 6.217 debconf: falling back to frontend: Readline
+#14 6.226 debconf: unable to initialize frontend: Readline
+#14 6.226 debconf: (This frontend requires a controlling tty.)
+#14 6.226 debconf: falling back to frontend: Teletype
+#14 6.258 
+#14 6.258 Creating config file /etc/php/8.2/mods-available/phar.ini with new version
+#14 6.469 debconf: unable to initialize frontend: Dialog
+#14 6.469 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 6.469 debconf: falling back to frontend: Readline
+#14 6.485 debconf: unable to initialize frontend: Readline
+#14 6.485 debconf: (This frontend requires a controlling tty.)
+#14 6.485 debconf: falling back to frontend: Teletype
+#14 6.549 
+#14 6.549 Creating config file /etc/php/8.2/mods-available/posix.ini with new version
+#14 6.772 debconf: unable to initialize frontend: Dialog
+#14 6.772 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 6.772 debconf: falling back to frontend: Readline
+#14 6.784 debconf: unable to initialize frontend: Readline
+#14 6.784 debconf: (This frontend requires a controlling tty.)
+#14 6.784 debconf: falling back to frontend: Teletype
+#14 6.826 
+#14 6.826 Creating config file /etc/php/8.2/mods-available/shmop.ini with new version
+#14 7.090 debconf: unable to initialize frontend: Dialog
+#14 7.090 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 7.090 debconf: falling back to frontend: Readline
+#14 7.098 debconf: unable to initialize frontend: Readline
+#14 7.098 debconf: (This frontend requires a controlling tty.)
+#14 7.098 debconf: falling back to frontend: Teletype
+#14 7.182 
+#14 7.182 Creating config file /etc/php/8.2/mods-available/sockets.ini with new version
+#14 7.399 debconf: unable to initialize frontend: Dialog
+#14 7.399 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 7.399 debconf: falling back to frontend: Readline
+#14 7.407 debconf: unable to initialize frontend: Readline
+#14 7.407 debconf: (This frontend requires a controlling tty.)
+#14 7.407 debconf: falling back to frontend: Teletype
+#14 7.453 
+#14 7.453 Creating config file /etc/php/8.2/mods-available/sysvmsg.ini with new version
+#14 7.651 debconf: unable to initialize frontend: Dialog
+#14 7.651 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 7.651 debconf: falling back to frontend: Readline
+#14 7.657 debconf: unable to initialize frontend: Readline
+#14 7.657 debconf: (This frontend requires a controlling tty.)
+#14 7.657 debconf: falling back to frontend: Teletype
+#14 7.685 
+#14 7.685 Creating config file /etc/php/8.2/mods-available/sysvsem.ini with new version
+#14 7.883 debconf: unable to initialize frontend: Dialog
+#14 7.883 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 7.883 debconf: falling back to frontend: Readline
+#14 7.890 debconf: unable to initialize frontend: Readline
+#14 7.890 debconf: (This frontend requires a controlling tty.)
+#14 7.890 debconf: falling back to frontend: Teletype
+#14 7.920 
+#14 7.920 Creating config file /etc/php/8.2/mods-available/sysvshm.ini with new version
+#14 8.101 debconf: unable to initialize frontend: Dialog
+#14 8.101 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 8.101 debconf: falling back to frontend: Readline
+#14 8.108 debconf: unable to initialize frontend: Readline
+#14 8.108 debconf: (This frontend requires a controlling tty.)
+#14 8.108 debconf: falling back to frontend: Teletype
+#14 8.136 
+#14 8.136 Creating config file /etc/php/8.2/mods-available/tokenizer.ini with new version
+#14 8.252 Setting up php8.2-opcache (8.2.29-1~deb12u1) ...
+#14 8.340 debconf: unable to initialize frontend: Dialog
+#14 8.340 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 8.340 debconf: falling back to frontend: Readline
+#14 8.346 debconf: unable to initialize frontend: Readline
+#14 8.346 debconf: (This frontend requires a controlling tty.)
+#14 8.346 debconf: falling back to frontend: Teletype
+#14 8.374 
+#14 8.374 Creating config file /etc/php/8.2/mods-available/opcache.ini with new version
+#14 8.489 Setting up php8.2-readline (8.2.29-1~deb12u1) ...
+#14 8.584 debconf: unable to initialize frontend: Dialog
+#14 8.584 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 8.584 debconf: falling back to frontend: Readline
+#14 8.592 debconf: unable to initialize frontend: Readline
+#14 8.592 debconf: (This frontend requires a controlling tty.)
+#14 8.592 debconf: falling back to frontend: Teletype
+#14 8.624 
+#14 8.624 Creating config file /etc/php/8.2/mods-available/readline.ini with new version
+#14 8.743 Setting up php8.2-cli (8.2.29-1~deb12u1) ...
+#14 8.755 update-alternatives: using /usr/bin/php8.2 to provide /usr/bin/php (php) in auto mode
+#14 8.759 update-alternatives: using /usr/bin/phar8.2 to provide /usr/bin/phar (phar) in auto mode
+#14 8.763 update-alternatives: using /usr/bin/phar.phar8.2 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+#14 8.871 debconf: unable to initialize frontend: Dialog
+#14 8.871 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 8.871 debconf: falling back to frontend: Readline
+#14 8.884 debconf: unable to initialize frontend: Readline
+#14 8.884 debconf: (This frontend requires a controlling tty.)
+#14 8.884 debconf: falling back to frontend: Teletype
+#14 8.949 
+#14 8.949 Creating config file /etc/php/8.2/cli/php.ini with new version
+#14 9.565 Setting up libapache2-mod-php8.2 (8.2.29-1~deb12u1) ...
+#14 9.761 debconf: unable to initialize frontend: Dialog
+#14 9.761 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#14 9.761 debconf: falling back to frontend: Readline
+#14 9.775 debconf: unable to initialize frontend: Readline
+#14 9.775 debconf: (This frontend requires a controlling tty.)
+#14 9.775 debconf: falling back to frontend: Teletype
+#14 9.831 
+#14 9.831 Creating config file /etc/php/8.2/apache2/php.ini with new version
+#14 10.72 Module mpm_event disabled.
+#14 10.74 Enabling module mpm_prefork.
+#14 10.75 apache2_switch_mpm Switch to prefork
+#14 10.80 invoke-rc.d: could not determine current runlevel
+#14 10.81 invoke-rc.d: policy-rc.d denied execution of restart.
+#14 10.87 apache2_invoke: Enable module php8.2
+#14 10.90 invoke-rc.d: could not determine current runlevel
+#14 10.90 invoke-rc.d: policy-rc.d denied execution of restart.
+#14 10.91 Setting up php8.2 (8.2.29-1~deb12u1) ...
+#14 10.92 Processing triggers for libc-bin (2.36-9+deb12u10) ...
+#14 10.94 Processing triggers for mailcap (3.70+nmu1) ...
+#14 10.95 Processing triggers for php8.2-cli (8.2.29-1~deb12u1) ...
+#14 10.96 Processing triggers for libapache2-mod-php8.2 (8.2.29-1~deb12u1) ...
+#14 10.99 
+#14 10.99 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#14 10.99 
+#14 11.00 Reading package lists...
+#14 11.71 Building dependency tree...
+#14 11.92 Reading state information...
+#14 12.18 The following NEW packages will be installed:
+#14 12.18   php8.2-xdebug
+#14 12.21 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+#14 12.21 Need to get 582 kB of archives.
+#14 12.21 After this operation, 1869 kB of additional disk space will be used.
+#14 12.21 Get:1 http://deb.debian.org/debian bookworm/main amd64 php8.2-xdebug amd64 3.2.0+3.1.6+2.9.8+2.8.1+2.5.5-3 [582 kB]
+#14 12.33 debconf: delaying package configuration, since apt-utils is not installed
+#14 12.35 Fetched 582 kB in 0s (11.8 MB/s)
+#14 12.37 Selecting previously unselected package php8.2-xdebug.
+#14 12.37 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12263 files and directories currently installed.)
+#14 12.38 Preparing to unpack .../php8.2-xdebug_3.2.0+3.1.6+2.9.8+2.8.1+2.5.5-3_amd64.deb ...
+#14 12.39 Unpacking php8.2-xdebug (3.2.0+3.1.6+2.9.8+2.8.1+2.5.5-3) ...
+#14 12.45 Setting up php8.2-xdebug (3.2.0+3.1.6+2.9.8+2.8.1+2.5.5-3) ...
+#14 12.55 Processing triggers for libapache2-mod-php8.2 (8.2.29-1~deb12u1) ...
+#14 12.57 Processing triggers for php8.2-cli (8.2.29-1~deb12u1) ...
+#14 DONE 12.6s
+
+#15 [stage-0  7/17] COPY ./etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
+#15 DONE 0.0s
+
+#16 [stage-0  8/17] COPY ./etc/php/8.2/apache2/php.ini /etc/php/8.2/apache2/php.ini
+#16 DONE 0.0s
+
+#17 [stage-0  9/17] COPY ./etc/php/8.2/cli/php.ini /etc/php/8.2/cli/php.ini
+#17 DONE 0.0s
+
+#18 [stage-0 10/17] COPY ./etc/php/8.2/mods-available/opcache.ini /etc/php/8.2/mods-available/opcache.ini
+#18 DONE 0.0s
+
+#19 [stage-0 11/17] COPY ./etc/php/8.2/mods-available/xdebug.ini /etc/php/8.2/mods-available/xdebug.ini
+#19 DONE 0.0s
+
+#20 [stage-0 12/17] COPY --from=composer/composer:2.8 /usr/bin/composer /usr/bin/composer
+#20 DONE 0.1s
+
+#21 [stage-0 13/17] WORKDIR /var/www
+#21 DONE 0.0s
+
+#22 [stage-0 14/17] COPY ./var/www/index.php /var/www/index.php
+#22 DONE 0.1s
+
+#23 [stage-0 15/17] COPY ./var/www/xdebug.php /var/www/xdebug.php
+#23 DONE 0.1s
+
+#24 [stage-0 16/17] COPY ./var/www/test.php /var/www/test.php
+#24 DONE 0.0s
+
+#25 [stage-0 17/17] COPY ./scripts/script.sh /scripts/script.sh
+#25 DONE 0.1s
+
+#26 exporting to image
+#26 exporting layers
+#26 exporting layers 5.6s done
+#26 exporting manifest sha256:9377b9e92071d6d281ed4efaf3645ded398ca0aa1390f7cf166a144376622646 0.0s done
+#26 exporting config sha256:8f22053451fd6b79c9ac4ed2db4e3875f4260bed2b46f8329c9d69dba305b0be 0.0s done
+#26 exporting attestation manifest sha256:eea20e0039b3d54db97b3d6ebea76281b8c0a5a6aca51f64d0e2319a38fbc5a1 0.0s done
+#26 exporting manifest list sha256:3f5924936dc07e7eccaadb7e75c389b8064bcb178bbb60f7c5c884615b7d1161 0.0s done
+#26 naming to docker.io/drvelasquezq/php-8-apache2-bookworm:1.0.0 done
+#26 unpacking to docker.io/drvelasquezq/php-8-apache2-bookworm:1.0.0
+#26 unpacking to docker.io/drvelasquezq/php-8-apache2-bookworm:1.0.0 4.9s done
+#26 DONE 10.7s
