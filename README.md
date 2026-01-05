@@ -73,7 +73,7 @@ docker cp container-php-8-apache2-bookworm:/etc/php/8.2/cli/php.ini ./etc/php/8.
 
 ### ejemplo para subir imagen a docker hub
 ```bash
-docker tag php-8-apache2-bookworm:1.0.0 drvelasquezq/php-8-apache2-bookworm:1.0.0
+docker tag drvelasquezq/php-8-apache2-bookworm:1.0.0 usuario/php-8-apache2-bookworm:1.0.0
 ```
 ```
 docker push drvelasquezq/php-8-apache2-bookworm:1.0.0
